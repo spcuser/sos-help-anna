@@ -320,13 +320,14 @@ function LandingPage() {
           {t.galeriaTitle}
         </h2>
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {([t.foto1, t.foto2, t.foto3, t.foto4, t.foto5, t.foto6]).map((label, i) => (
-            <div
+          {fotos.map((f, i) => (
+            <img
               key={i}
-              className="aspect-square rounded-xl border-2 border-dashed border-gray-300 bg-[#f3f1ec] flex items-center justify-center text-center text-sm text-gray-500 p-2.5"
-            >
-              {label}
-            </div>
+              src={f.url}
+              alt={f.alt}
+              loading="lazy"
+              className="aspect-square w-full object-cover rounded-xl shadow-sm"
+            />
           ))}
         </div>
       </section>
