@@ -269,9 +269,11 @@ function LandingPage() {
           </h1>
           <p className="text-lg text-gray-100 mb-7">{t.heroSub}</p>
 
-          <div className="w-full max-w-md aspect-[4/5] mx-auto mb-7 rounded-2xl border-[3px] border-dashed border-white/60 bg-white/10 flex items-center justify-center text-center p-5 text-sm text-gray-200">
-            {t.heroFotoPlaceholder}
-          </div>
+          <img
+            src={foto1.url}
+            alt="Anna abrazando a su hija"
+            className="w-full max-w-md aspect-[4/5] object-cover mx-auto mb-7 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
+          />
 
           <div className="flex flex-col gap-3 max-w-md mx-auto">
             <a
