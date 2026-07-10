@@ -1,5 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
+import foto1 from "../assets/foto-1.jpg.asset.json";
+import foto2 from "../assets/foto-2.jpg.asset.json";
+import foto3 from "../assets/foto-3.jpg.asset.json";
+import foto4 from "../assets/foto-4.jpg.asset.json";
+import foto5 from "../assets/foto-5.jpg.asset.json";
+import foto6 from "../assets/foto-6.jpg.asset.json";
+
+const fotos = [
+  { url: foto2.url, alt: "Anna y su hija en el columpio" },
+  { url: foto3.url, alt: "La niña con su peluche" },
+  { url: foto4.url, alt: "Anna sonriendo" },
+  { url: foto5.url, alt: "La niña recién nacida en el hospital" },
+  { url: foto6.url, alt: "Anna en un momento difícil" },
+  { url: foto1.url, alt: "Anna abrazando a su hija" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
