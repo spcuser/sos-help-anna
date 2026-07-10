@@ -25,11 +25,11 @@ export const Route = createFileRoute("/")({
         content:
           "Anna y su hija de 4 años lo han perdido todo. Ayúdales a tener un techo con una donación en GoFundMe.",
       },
-      { property: "og:title", content: "Ayuda a Anna y su hija" },
+      { property: "og:title", content: "Ayuda a Anna y su hija / Help Anna and her daughter" },
       {
         property: "og:description",
         content:
-          "Una madre y su hija de 4 años lo han perdido todo. Tu ayuda puede darles un techo hoy.",
+          "Anna y su hija de 4 años lo han perdido todo. Ayúdales a tener un techo con una donación en GoFundMe.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

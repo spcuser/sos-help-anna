@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Ayuda a Anna y su hija / Help Anna and her daughter" },
+      { name: "description", content: "Anna y su hija de 4 años lo han perdido todo. Ayúdales a tener un techo con una donación en GoFundMe." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Ayuda a Anna y su hija / Help Anna and her daughter" },
+      { property: "og:description", content: "Anna y su hija de 4 años lo han perdido todo. Ayúdales a tener un techo con una donación en GoFundMe." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Ayuda a Anna y su hija / Help Anna and her daughter" },
+      { name: "twitter:description", content: "Anna y su hija de 4 años lo han perdido todo. Ayúdales a tener un techo con una donación en GoFundMe." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/bd4caba1-5d24-40ca-acb6-73c4cebe78bc" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/bd4caba1-5d24-40ca-acb6-73c4cebe78bc" },
     ],
     links: [
       {
