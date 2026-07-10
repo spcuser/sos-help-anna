@@ -1,5 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
+import foto1 from "../assets/foto-1.jpg.asset.json";
+import foto2 from "../assets/foto-2.jpg.asset.json";
+import foto3 from "../assets/foto-3.jpg.asset.json";
+import foto4 from "../assets/foto-4.jpg.asset.json";
+import foto5 from "../assets/foto-5.jpg.asset.json";
+import foto6 from "../assets/foto-6.jpg.asset.json";
+
+const fotos = [
+  { url: foto2.url, alt: "Anna y su hija en el columpio" },
+  { url: foto3.url, alt: "La niña con su peluche" },
+  { url: foto4.url, alt: "Anna sonriendo" },
+  { url: foto5.url, alt: "La niña recién nacida en el hospital" },
+  { url: foto6.url, alt: "Anna en un momento difícil" },
+  { url: foto1.url, alt: "Anna abrazando a su hija" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -254,9 +269,11 @@ function LandingPage() {
           </h1>
           <p className="text-lg text-gray-100 mb-7">{t.heroSub}</p>
 
-          <div className="w-full max-w-md aspect-[4/5] mx-auto mb-7 rounded-2xl border-[3px] border-dashed border-white/60 bg-white/10 flex items-center justify-center text-center p-5 text-sm text-gray-200">
-            {t.heroFotoPlaceholder}
-          </div>
+          <img
+            src={foto1.url}
+            alt="Anna abrazando a su hija"
+            className="w-full max-w-md aspect-[4/5] object-cover mx-auto mb-7 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
+          />
 
           <div className="flex flex-col gap-3 max-w-md mx-auto">
             <a
@@ -303,13 +320,14 @@ function LandingPage() {
           {t.galeriaTitle}
         </h2>
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {([t.foto1, t.foto2, t.foto3, t.foto4, t.foto5, t.foto6]).map((label, i) => (
-            <div
+          {fotos.map((f, i) => (
+            <img
               key={i}
-              className="aspect-square rounded-xl border-2 border-dashed border-gray-300 bg-[#f3f1ec] flex items-center justify-center text-center text-sm text-gray-500 p-2.5"
-            >
-              {label}
-            </div>
+              src={f.url}
+              alt={f.alt}
+              loading="lazy"
+              className="aspect-square w-full object-cover rounded-xl shadow-sm"
+            />
           ))}
         </div>
       </section>
