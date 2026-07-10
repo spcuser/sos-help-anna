@@ -142,7 +142,7 @@
     color: var(--color-foreground);
   }
 
-lovable-badge {
+#lovable-badge {
 display: none ! important
 }
 
