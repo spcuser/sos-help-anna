@@ -435,8 +435,6 @@ function LandingPage() {
       )}
     </div>
   );
-  #lovable-badge {
-display: none ! important
-}
+
 
 }
