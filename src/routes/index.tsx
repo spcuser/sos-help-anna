@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
 });
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxDy3RpfSVjFOUf2lkaH6c9kULpb01W1ayuaMV7i08YZ3Wh7xF9z1BbFjGG8vmwAwQE/exec";
+  "https://script.google.com/macros/s/AKfycbyjXoBbklTOXQpl9fVf590DrnBNDqWVpvpkgS4uHDdaX8KK7Xk4RImQSV2e4UtGgxnKhw/exec";
 
 const GOFUNDME_URL = "https://gofund.me/736624632";
 
