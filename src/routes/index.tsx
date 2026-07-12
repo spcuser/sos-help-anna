@@ -99,9 +99,22 @@ const i18n = {
     msgError: "Hubo un problema al enviar. Inténtalo de nuevo.",
     btnCompartir: "Compartir",
     msgLinkCopied: "Enlace copiado al portapapeles. ¡Compártelo!",
+    msgCopyError: "No se pudo copiar el enlace. Inténtalo manualmente.",
     shareTitle: "Ayuda a Anna y su hija",
     shareText:
       "Anna y su hija de 4 años lo han perdido todo. Ayúdales a tener un techo.",
+    shareModalTitle: "Compartir en",
+    shareModalClose: "Cerrar",
+    shareCopyLink: "Copiar enlace",
+    shareTiktok: "TikTok",
+    shareInstagram: "Instagram",
+    shareFacebook: "Facebook",
+    shareTwitter: "X / Twitter",
+    shareWhatsapp: "WhatsApp",
+    shareTelegram: "Telegram",
+    shareLinkedin: "LinkedIn",
+    shareReddit: "Reddit",
+    shareEmail: "Email",
   },
   en: {
     urgencia:
