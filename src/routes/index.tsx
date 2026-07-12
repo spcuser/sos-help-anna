@@ -497,6 +497,15 @@ function LandingPage() {
         {t.footerText}
       </footer>
 
+      {showShare && (
+        <ShareModal
+          t={t}
+          onClose={closeShare}
+          onShare={shareTo}
+          onCopy={copyLink}
+        />
+      )}
+
       {toast && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#16161a] text-white px-5 py-3 rounded-full text-sm z-[100] max-w-[90vw] text-center shadow-lg">
           {toast}
