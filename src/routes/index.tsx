@@ -169,9 +169,22 @@ const i18n = {
     msgError: "There was a problem sending it. Please try again.",
     btnCompartir: "Share",
     msgLinkCopied: "Link copied to clipboard. Go spread the word!",
+    msgCopyError: "Could not copy the link. Please try manually.",
     shareTitle: "Help Anna and her daughter",
     shareText:
       "Anna and her 4-year-old daughter lost everything. Help them get a roof.",
+    shareModalTitle: "Share on",
+    shareModalClose: "Close",
+    shareCopyLink: "Copy link",
+    shareTiktok: "TikTok",
+    shareInstagram: "Instagram",
+    shareFacebook: "Facebook",
+    shareTwitter: "X / Twitter",
+    shareWhatsapp: "WhatsApp",
+    shareTelegram: "Telegram",
+    shareLinkedin: "LinkedIn",
+    shareReddit: "Reddit",
+    shareEmail: "Email",
   },
 } as const;
 
