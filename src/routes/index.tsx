@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import foto1 from "../assets/foto-1.jpg.asset.json";
 import foto2 from "../assets/foto-2.jpg.asset.json";
 import foto3 from "../assets/foto-3.jpg.asset.json";
 import foto4 from "../assets/foto-4.jpg.asset.json";
 import foto5 from "../assets/foto-5.jpg.asset.json";
 import foto6 from "../assets/foto-6.jpg.asset.json";
+
 
 const fotos = [
   { url: foto2.url, alt: "Anna y su hija en el columpio" },
@@ -38,10 +40,8 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyjXoBbklTOXQpl9fVf590DrnBNDqWVpvpkgS4uHDdaX8KK7Xk4RImQSV2e4UtGgxnKhw/exec";
-
 const GOFUNDME_URL = "https://gofund.me/736624632";
+
 
 type Lang = "es" | "en";
 
@@ -215,15 +215,10 @@ function LandingPage() {
     setSending(true);
     setFormMsg({ text: t.msgSending, kind: "info" });
     try {
-      const body = new URLSearchParams();
-      body.append("email", email);
-      body.append("nombre", nombre);
-      body.append("lang", lang);
-      await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body,
-      });
+      const { error } = await supabase
+        .from("email_subscribers")
+        .insert({ email, nombre: nombre || null, lang });
+      if (error) throw error;
       setFormMsg({ text: t.msgThanks, kind: "ok" });
       form.reset();
     } catch {
@@ -231,6 +226,7 @@ function LandingPage() {
     } finally {
       setSending(false);
     }
+
   }
 
   return (
