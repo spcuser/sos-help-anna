@@ -216,6 +216,66 @@ function LandingPage() {
 
   }
 
+  function closeShare() {
+    setShowShare(false);
+  }
+
+  function shareTo(network: string) {
+    const url = typeof window !== "undefined" ? window.location.href : "";
+    const text = t.shareText;
+    const title = t.shareTitle;
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
+    const encodedTitle = encodeURIComponent(title);
+
+    let shareUrl = "";
+    switch (network) {
+      case "facebook":
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        break;
+      case "twitter":
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+        break;
+      case "whatsapp":
+        shareUrl = `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
+        break;
+      case "telegram":
+        shareUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText}`;
+        break;
+      case "linkedin":
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        break;
+      case "reddit":
+        shareUrl = `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`;
+        break;
+      case "email":
+        shareUrl = `mailto:?subject=${encodedTitle}&body=${encodedText}%0A%0A${encodedUrl}`;
+        break;
+      case "tiktok":
+      case "instagram":
+        copyLink();
+        return;
+      default:
+        copyLink();
+        return;
+    }
+
+    if (shareUrl) {
+      window.open(shareUrl, "_blank", "noopener,noreferrer,width=600,height=500");
+    }
+    closeShare();
+  }
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setToast(t.msgLinkCopied);
+    } catch {
+      setToast(t.msgCopyError);
+    }
+    closeShare();
+  }
+
   return (
     <div className="min-h-screen bg-[#fdfaf6] text-[#16161a] font-sans leading-relaxed">
       {/* Selector de idioma */}
