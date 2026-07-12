@@ -40,10 +40,8 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyjXoBbklTOXQpl9fVf590DrnBNDqWVpvpkgS4uHDdaX8KK7Xk4RImQSV2e4UtGgxnKhw/exec";
-
 const GOFUNDME_URL = "https://gofund.me/736624632";
+
 
 type Lang = "es" | "en";
 
