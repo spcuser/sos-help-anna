@@ -215,15 +215,10 @@ function LandingPage() {
     setSending(true);
     setFormMsg({ text: t.msgSending, kind: "info" });
     try {
-      const body = new URLSearchParams();
-      body.append("email", email);
-      body.append("nombre", nombre);
-      body.append("lang", lang);
-      await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body,
-      });
+      const { error } = await supabase
+        .from("email_subscribers")
+        .insert({ email, nombre: nombre || null, lang });
+      if (error) throw error;
       setFormMsg({ text: t.msgThanks, kind: "ok" });
       form.reset();
     } catch {
@@ -231,6 +226,7 @@ function LandingPage() {
     } finally {
       setSending(false);
     }
+
   }
 
   return (
