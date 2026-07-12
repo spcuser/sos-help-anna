@@ -185,22 +185,8 @@ function LandingPage() {
     return () => clearTimeout(id);
   }, [toast]);
 
-  async function compartir() {
-    const shareData = {
-      title: t.shareTitle,
-      text: t.shareText,
-      url: typeof window !== "undefined" ? window.location.href : "",
-    };
-    try {
-      if (typeof navigator !== "undefined" && (navigator as Navigator).share) {
-        await (navigator as Navigator).share(shareData);
-        return;
-      }
-      await navigator.clipboard.writeText(shareData.url);
-      setToast(t.msgLinkCopied);
-    } catch {
-      /* usuario canceló */
-    }
+  function compartir() {
+    setShowShare(true);
   }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
