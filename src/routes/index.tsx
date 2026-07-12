@@ -516,7 +516,7 @@ function LandingPage() {
 }
 
 type ShareModalProps = {
-  t: (typeof i18n)["es"];
+  t: (typeof i18n)[Lang];
   onClose: () => void;
   onShare: (network: string) => void;
   onCopy: () => void;
