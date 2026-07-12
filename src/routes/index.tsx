@@ -171,6 +171,7 @@ function LandingPage() {
   const [toast, setToast] = useState<string | null>(null);
   const [formMsg, setFormMsg] = useState<{ text: string; kind: "ok" | "error" | "info" } | null>(null);
   const [sending, setSending] = useState(false);
+  const [showShare, setShowShare] = useState(false);
 
   const t = i18n[lang];
 
